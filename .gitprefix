@@ -1,0 +1,16 @@
+commit {
+    :hammer: refactor
+    :sparkles: feat
+    :bug: fix
+    :wrench: chore
+    :books: docs
+    :art: style
+    :rocket: perf
+    :construction_worker: ci
+    :building_construction: build
+    :white_check_mark: test
+}
+
+tag {
+    :bookmark: tag
+}
