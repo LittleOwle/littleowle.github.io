@@ -1,0 +1,105 @@
+@use "_base/settings";
+
+:where(:root) {
+  @include settings.base-root;
+  @include settings.border;
+  --sepia-color: 0;
+  --gray-color: 0.5;
+}
+:where(html) {
+  filter: sepia(var(--sepia-color)) grayscale(var(--gray-color));
+  scroll-behavior: smooth;
+}
+
+:where(html, body) {
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+body {
+  overflow: auto;
+}
+:where(svg) {
+  pointer-events: none;
+}
+
+//noinspection CssNoGenericFontName
+:where(p, h4) {
+  letter-spacing: var(--font-letter-spacing-2);
+  line-height: var(--font-line-height-1);
+  inline-size: 100%;
+  font-family: var(--font-serif);
+}
+
+:where(h4) {
+  font-weight: var(--font-weight-6);
+  font-size: var(--font-size-4);
+}
+
+:where(p) {
+  font-weight: var(--font-weight-5);
+  font-size: var(--font-size-3);
+}
+
+:is(section.canvas-container) {
+  display: flex;
+  inline-size: 100%;
+  block-size: 100%;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  :where(main) {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+    inline-size: 15.625rem;
+    align-items: inherit;
+    justify-content: inherit;
+    box-sizing: inherit;
+    block-size: fit-content;
+
+    :where(.owle-background, .owle-body) {
+      :is(&.owle-background) {
+        color: var(--text-color);
+      }
+      :is(&.owle-body) {
+        color: var(--background-color);
+      }
+      fill: currentColor;
+    }
+    :where(article) {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 0.5rem;
+      white-space: wrap;
+      text-align: center;
+    }
+
+    :where(.logo-svg) {
+      max-inline-size: 60%;
+      block-size: auto;
+      max-block-size: 15.625rem;
+    }
+  }
+}
