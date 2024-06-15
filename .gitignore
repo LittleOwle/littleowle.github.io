@@ -19,6 +19,8 @@
 !AUTHORS
 !MAINTAINERS.md
 
+!.gitprefix
+
 **/*~
 **/*.log
 **/.DS_Store
