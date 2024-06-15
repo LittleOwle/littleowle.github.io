@@ -182,7 +182,7 @@ const mainText = {
     ]
 }
 
-const helloWordExample = {
+const comeSoon = {
     element: "main",
     children: [
         logoSvg,
@@ -190,4 +190,4 @@ const helloWordExample = {
     ]
 };
 
-export const comeSoonPage = Object.freeze(helloWordExample);
+export const comeSoonPage = Object.freeze(comeSoon);
